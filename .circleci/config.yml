@@ -23,6 +23,8 @@ jobs:
             pip install -r requirements.txt
             pip install poetry
             poetry install
+            make docker-image
+            make run-docker
             make test
   build-medium-arm64:
     machine:
@@ -44,6 +46,8 @@ jobs:
             pip install -r requirements.txt
             pip install poetry
             poetry install
+            make docker-image
+            make run-docker
             make test
                     
       
