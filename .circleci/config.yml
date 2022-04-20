@@ -20,9 +20,10 @@ jobs:
             pip3 install --upgrade virtualenv --progress-bar off
             python3 -m venv venv || virtualenv venv && . venv/bin/activate
             python3 -m pip install --upgrade pip
+            pip install -r requirements.txt
             pip install poetry
             poetry install
-            pytest
+            make test
   build-medium-arm64:
     machine:
       image: ubuntu-2004:202101-01
@@ -40,9 +41,10 @@ jobs:
             pip3 install --upgrade virtualenv --progress-bar off
             python3 -m venv venv || virtualenv venv && . venv/bin/activate
             python3 -m pip install --upgrade pip
+            pip install -r requirements.txt
             pip install poetry
             poetry install
-            pytest
+            make test
                     
       
 
